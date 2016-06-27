@@ -3,6 +3,8 @@ var greeting = require('./views/greeting.hbs')
 var showLocation = require('./views/location.hbs')
 
 var endpoint = 'https://api.wheretheiss.at/v1/satellites/25544'
+showLocation()
+function findISS() {
 
 xhr.get(endpoint, function (err, data) {
   if (err) {
@@ -20,3 +22,4 @@ xhr.get(endpoint, function (err, data) {
   var target = document.getElementsByTagName('main')[0]
   target.innerHTML = showLocation(myData)
 })
+}
