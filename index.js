@@ -1,10 +1,10 @@
 var xhr = require('xhr')
 var greeting = require('./views/greeting.hbs')
 var showLocation = require('./views/location.hbs')
-
+console.log('this is the new page')
 var endpoint = 'https://api.wheretheiss.at/v1/satellites/25544'
 var target = document.getElementsByTagName('main')[0]
-target.innerHTML = showLocation(myData)
+target.innerHTML = showLocation()
 function findISS() {
 
 xhr.get(endpoint, function (err, data) {
