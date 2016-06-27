@@ -1,7 +1,7 @@
 var xhr = require('xhr')
 var greeting = require('./views/greeting.hbs')
 
-var endpoint = 'http://localhost:3000/food/'
+var endpoint = 'https://localhost:3000/food/'
 
 xhr.get(endpoint, function (err, data) {
   if (err) {
