@@ -1,7 +1,7 @@
 var xhr = require('xhr')
 var greeting = require('./views/greeting.hbs')
 
-var endpoint = 'https://api.wheretheiss.at/v1/satellites/25544'
+var endpoint = 'http://localhost:3000/food'
 
 xhr.get(endpoint, function (err, data) {
   if (err) {
@@ -10,8 +10,7 @@ xhr.get(endpoint, function (err, data) {
 
   // In case you're curious
   console.log(data.body) // FYI: data.body is a string
-  var myData = JSON.parse(data)
   // Replace 'Space' below with the response
   var target = document.getElementsByTagName('main')[0]
-  target.innerHTML = greeting({name: myData.body.name})
+  target.innerHTML = greeting({name: 'why wont this work?'})
 })
