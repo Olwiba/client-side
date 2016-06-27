@@ -18,5 +18,5 @@ xhr.get(endpoint, function (err, data) {
 
   // Replace 'Space' below with the response
   var target = document.getElementsByTagName('main')[0]
-  target.innerHTML = location(myData)
+  target.innerHTML = showLocation(myData)
 })
