@@ -9,7 +9,7 @@ var target = document.getElementsByTagName('main')[0]
 target.innerHTML = showLocation()
 
 
-function findISS() {
+function updateISS() {
 
 xhr.get(endpoint, function (err, data) {
   if (err) {
@@ -26,4 +26,6 @@ xhr.get(endpoint, function (err, data) {
 })
 }
 
-button.addEventListener('click', findISS)
+var findISS = document.getElementById('iss')
+
+findISS.addEventListener('click', updateISS)
