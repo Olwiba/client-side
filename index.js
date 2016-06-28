@@ -15,7 +15,7 @@ xhr.get(endpoint, function (err, data) {
   if (err) {
     console.error(err)
   }
-
+  console.log("Button was pressed") 
   // In case you're curious
   console.log(data.body) // FYI: data.body is a string
   var myData = JSON.parse(data.body)
