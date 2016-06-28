@@ -3,3 +3,7 @@ body {
   background-color: #000;
 }
 
+#googleMap {
+  width: 99%;
+  height: 700px;
+}
