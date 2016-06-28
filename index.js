@@ -25,3 +25,5 @@ xhr.get(endpoint, function (err, data) {
   target.innerHTML = showLocation(myData)
 })
 }
+
+button.addEventListener('click', findISS)
