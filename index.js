@@ -27,130 +27,129 @@ xhr.get(endpoint, function (err, data) {
   // Replace 'Space' below with the response
   var target = document.getElementsByTagName('main')[0]
   target.innerHTML = showLocation(myData)
-  /* Set up map */
-var mapPos = {
-    lat: myData.latitude,
-    lng: myData.longitude
-};
-var mapProp = {
-    center: mapPos,
-    zoom: 6,
-    mapTypeId: google.maps.MapTypeId
-        .ROADMAP
-};
-// _______________ Initialize map function _______________
-function initialize() {
-    var map = new google.maps.Map(
-        document.getElementById(
-            "googleMap"),
-        mapProp);
-// _______________ Map styles _______________
-    var mapStyle = [{
-        "featureType": "all",
-        "elementType": "labels.text.fill",
-        "stylers": [{
-            "color": "#ffffff"
-        }]
-    }, {
-        "featureType": "all",
-        "elementType": "labels.text.stroke",
-        "stylers": [{
-            "color": "#000000"
-        }, {
-            "lightness": 13
-        }]
-    }, {
-        "featureType": "administrative",
-        "elementType": "geometry.fill",
-        "stylers": [{
-            "color": "#000000"
-        }]
-    }, {
-        "featureType": "administrative",
-        "elementType": "geometry.stroke",
-        "stylers": [{
-            "color": "#144b53"
-        }, {
-            "lightness": 14
-        }, {
-            "weight": 1.4
-        }]
-    }, {
-        "featureType": "landscape",
-        "elementType": "all",
-        "stylers": [{
-            "color": "#08304b"
-        }]
-    }, {
-        "featureType": "poi",
-        "elementType": "geometry",
-        "stylers": [{
-            "color": "#0c4152"
-        }, {
-            "lightness": 5
-        }]
-    }, {
-        "featureType": "road.highway",
-        "elementType": "geometry.fill",
-        "stylers": [{
-            "color": "#000000"
-        }]
-    }, {
-        "featureType": "road.highway",
-        "elementType": "geometry.stroke",
-        "stylers": [{
-            "color": "#0b434f"
-        }, {
-            "lightness": 25
-        }]
-    }, {
-        "featureType": "road.arterial",
-        "elementType": "geometry.fill",
-        "stylers": [{
-            "color": "#000000"
-        }]
-    }, {
-        "featureType": "road.arterial",
-        "elementType": "geometry.stroke",
-        "stylers": [{
-            "color": "#0b3d51"
-        }, {
-            "lightness": 16
-        }]
-    }, {
-        "featureType": "road.local",
-        "elementType": "geometry",
-        "stylers": [{
-            "color": "#000000"
-        }]
-    }, {
-        "featureType": "transit",
-        "elementType": "all",
-        "stylers": [{
-            "color": "#146474"
-        }]
-    }, {
-        "featureType": "water",
-        "elementType": "all",
-        "stylers": [{
-            "color": "#021019"
-        }]
-    }];
-    map.setOptions({
-        styles: mapStyle
-    });
-    // _______________ Add map marker _______________
-    var marker = new google.maps
-        .Marker({
-            position: mapPos,
-            map: map,
-            title: 'The ISS is here!'
-        });
-}
+  
+	  /* Set up map */
+	var mapPos = {
+	    lat: myLat,
+	    lng: myLong
+	};
+	var mapProp = {
+	    center: mapPos,
+	    zoom: 6,
+	    mapTypeId: google.maps.MapTypeId
+	        .ROADMAP
+	};
+	// _______________ Initialize map function _______________
+	function initialize() {
+	    var map = new google.maps.Map(
+	        document.getElementById(
+	            "googleMap"),
+	        mapProp);
+	// _______________ Map styles _______________
+	    var mapStyle = [{
+	        "featureType": "all",
+	        "elementType": "labels.text.fill",
+	        "stylers": [{
+	            "color": "#ffffff"
+	        }]
+	    }, {
+	        "featureType": "all",
+	        "elementType": "labels.text.stroke",
+	        "stylers": [{
+	            "color": "#000000"
+	        }, {
+	            "lightness": 13
+	        }]
+	    }, {
+	        "featureType": "administrative",
+	        "elementType": "geometry.fill",
+	        "stylers": [{
+	            "color": "#000000"
+	        }]
+	    }, {
+	        "featureType": "administrative",
+	        "elementType": "geometry.stroke",
+	        "stylers": [{
+	            "color": "#144b53"
+	        }, {
+	            "lightness": 14
+	        }, {
+	            "weight": 1.4
+	        }]
+	    }, {
+	        "featureType": "landscape",
+	        "elementType": "all",
+	        "stylers": [{
+	            "color": "#08304b"
+	        }]
+	    }, {
+	        "featureType": "poi",
+	        "elementType": "geometry",
+	        "stylers": [{
+	            "color": "#0c4152"
+	        }, {
+	            "lightness": 5
+	        }]
+	    }, {
+	        "featureType": "road.highway",
+	        "elementType": "geometry.fill",
+	        "stylers": [{
+	            "color": "#000000"
+	        }]
+	    }, {
+	        "featureType": "road.highway",
+	        "elementType": "geometry.stroke",
+	        "stylers": [{
+	            "color": "#0b434f"
+	        }, {
+	            "lightness": 25
+	        }]
+	    }, {
+	        "featureType": "road.arterial",
+	        "elementType": "geometry.fill",
+	        "stylers": [{
+	            "color": "#000000"
+	        }]
+	    }, {
+	        "featureType": "road.arterial",
+	        "elementType": "geometry.stroke",
+	        "stylers": [{
+	            "color": "#0b3d51"
+	        }, {
+	            "lightness": 16
+	        }]
+	    }, {
+	        "featureType": "road.local",
+	        "elementType": "geometry",
+	        "stylers": [{
+	            "color": "#000000"
+	        }]
+	    }, {
+	        "featureType": "transit",
+	        "elementType": "all",
+	        "stylers": [{
+	            "color": "#146474"
+	        }]
+	    }, {
+	        "featureType": "water",
+	        "elementType": "all",
+	        "stylers": [{
+	            "color": "#021019"
+	        }]
+	    }];
+	    map.setOptions({
+	        styles: mapStyle
+	    });
+	    // _______________ Add map marker _______________
+	    var marker = new google.maps
+	        .Marker({
+	            position: mapPos,
+	            map: map,
+	            title: 'Server / Person Located Here!'
+	        });
+	}
 
-target.innerHTML = showLocation()
 initialize();
-
 
   var findISS = document.getElementById('iss')
 	findISS.addEventListener('click', updateISS)
