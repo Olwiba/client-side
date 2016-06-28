@@ -146,14 +146,16 @@ xhr.get(endpoint, function (err, data) {
   console.log(data.body) // FYI: data.body is a string
   var myData = JSON.parse(data.body)
 
+  console.log('This is before ', myLat, myLong)
   mylat = myData.latitude
   myLong = myData.longitude
+  console.log('This is after ', myLat, myLong)
 
   // Replace 'Space' below with the response
   var target = document.getElementsByTagName('main')[0]
   target.innerHTML = showLocation(myData)
 	initialize();
-  
+
 
   var findISS = document.getElementById('iss')
 	findISS.addEventListener('click', updateISS)
