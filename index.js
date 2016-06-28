@@ -2,7 +2,7 @@ var xhr = require('xhr')
 var greeting = require('./views/greeting.hbs')
 var showLocation = require('./views/location.hbs')
 
-console.log('this is the newer page')
+console.log('this is the newest page')
 
 var endpoint = 'https://api.wheretheiss.at/v1/satellites/25544'
 var target = document.getElementsByTagName('main')[0]
