@@ -23,6 +23,9 @@ xhr.get(endpoint, function (err, data) {
   // Replace 'Space' below with the response
   var target = document.getElementsByTagName('main')[0]
   target.innerHTML = showLocation(myData)
+  var findISS = document.getElementById('iss')
+
+	findISS.addEventListener('click', updateISS)
 })
 }
 
