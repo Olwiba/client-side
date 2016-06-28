@@ -70,9 +70,9 @@ module.exports=require("./dist/cjs/handlebars.runtime")["default"];
 module.exports=require("handlebars/runtime")["default"];
 },{"handlebars/runtime":22}],24:[function(require,module,exports){
 function isFunction(o){var t=toString.call(o);return"[object Function]"===t||"function"==typeof o&&"[object RegExp]"!==t||"undefined"!=typeof window&&(o===window.setTimeout||o===window.alert||o===window.confirm||o===window.prompt)}module.exports=isFunction;var toString=Object.prototype.toString;
+
 },{}],25:[function(require,module,exports){
 var trim=require("trim"),forEach=require("for-each"),isArray=function(r){return"[object Array]"===Object.prototype.toString.call(r)};module.exports=function(r){if(!r)return{};var e={};return forEach(trim(r).split("\n"),function(r){var t=r.indexOf(":"),i=trim(r.slice(0,t)).toLowerCase(),o=trim(r.slice(t+1));"undefined"==typeof e[i]?e[i]=o:isArray(e[i])?e[i].push(o):e[i]=[e[i],o]}),e};
-
 },{"for-each":2,"trim":26}],26:[function(require,module,exports){
 function trim(r){return r.replace(/^\s*|\s*$/g,"")}exports=module.exports=trim,exports.left=function(r){return r.replace(/^\s*/,"")},exports.right=function(r){return r.replace(/\s*$/,"")};
 
@@ -85,7 +85,7 @@ function extend(){for(var r={},e=0;e<arguments.length;e++){var t=arguments[e];fo
 
 },{}],30:[function(require,module,exports){
 var HandlebarsCompiler=require("hbsfy/runtime");module.exports=HandlebarsCompiler.template({compiler:[7,">= 4.0.0"],main:function(e,a,n,l,r){var i;return"<h1>Hello "+e.escapeExpression((i=null!=(i=n.name||(null!=a?a.name:a))?i:n.helperMissing,"function"==typeof i?i.call(null!=a?a:{},{name:"name",hash:{},data:r}):i))+"!</h1>\n"},useData:!0});
+
 },{"hbsfy/runtime":23}],31:[function(require,module,exports){
 var HandlebarsCompiler=require("hbsfy/runtime");module.exports=HandlebarsCompiler.template({compiler:[7,">= 4.0.0"],main:function(t,n,d,e,l){var a=t.lambda,r=t.escapeExpression;return'\n<h1>Welcome to the ISS+S</h1>\n<h3>International Space Station Search</h3>\n<br>\n<p>\n\tHere You can find out where the ISS is located pinned on a map... It\'s that easy!\n</p>\n<button id="iss">Find Now!</button>\n<table>\n\t<tr>\n\t\t<td>Name: </td>\n\t\t<td>'+r(a(null!=n?n.name:n,n))+"</td>\n\t</tr>\n\t<tr>\n\t\t<td>ID: </td>\n\t\t<td>"+r(a(null!=n?n.id:n,n))+"</td>\n\t</tr>\n\t<tr>\n\t\t<td>Velocity: </td>\n\t\t<td>"+r(a(null!=n?n.velocity:n,n))+"</td>\n\t</tr>\n\t<tr>\n\t\t<td>Altitude: </td>\n\t\t<td>"+r(a(null!=n?n.altitude:n,n))+"</td>\n\t</tr>\n\t<tr>\n\t\t<td>Altitude: </td>\n\t\t<td>"+r(a(null!=n?n.altitude:n,n))+"</td>\n\t</tr>\n\t<tr>\n\t\t<td>Longitude: </td>\n\t\t<td>"+r(a(null!=n?n.longitude:n,n))+"</td>\n\t</tr>\n\t<tr>\n\t\t<td>Latitude: </td>\n\t\t<td>"+r(a(null!=n?n.latitude:n,n))+'</td>\n\t</tr>\n</table>\n\n<div id="googleMap"></div>\n\n'},useData:!0});
-
 },{"hbsfy/runtime":23}]},{},[1]);
