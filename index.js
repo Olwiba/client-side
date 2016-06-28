@@ -10,10 +10,27 @@ var target = document.getElementsByTagName('main')[0]
 var myLong = 0
 var myLat = 0
 
-/* Set up map */
+
+
+
+function updateISS() {
+
+xhr.get(endpoint, function (err, data) {
+  if (err) {
+    console.error(err)
+  }
+  console.log("Button was pressed") 
+  // In case you're curious
+  console.log(data.body) // FYI: data.body is a string
+  var myData = JSON.parse(data.body)
+
+  // Replace 'Space' below with the response
+  var target = document.getElementsByTagName('main')[0]
+  target.innerHTML = showLocation(myData)
+  /* Set up map */
 var mapPos = {
-    lat: myLat,
-    lng: myLong
+    lat: myData.latitude,
+    lng: myData.longitude
 };
 var mapProp = {
     center: mapPos,
@@ -127,34 +144,12 @@ function initialize() {
         .Marker({
             position: mapPos,
             map: map,
-            title: 'Server / Person Located Here!'
+            title: 'The ISS is here!'
         });
 }
 
 target.innerHTML = showLocation()
 initialize();
-
-
-function updateISS() {
-
-xhr.get(endpoint, function (err, data) {
-  if (err) {
-    console.error(err)
-  }
-  console.log("Button was pressed") 
-  // In case you're curious
-  console.log(data.body) // FYI: data.body is a string
-  var myData = JSON.parse(data.body)
-
-  console.log('this is my data ', typeof myData.latitude, typeof myData.longitude)
-  myLat = myData.latitude
-  myLong = myData.longitude
-  console.log('This is after ', myLat, myLong)
-
-  // Replace 'Space' below with the response
-  var target = document.getElementsByTagName('main')[0]
-  target.innerHTML = showLocation(myData)
-	initialize();
 
 
   var findISS = document.getElementById('iss')
