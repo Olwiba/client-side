@@ -1,10 +1,9 @@
 body {
   color: #fff;
   background-color: #000;
-  text
 }
 
-#googleMap {
-  width: 99%;
-  height: 700px;
-}
+	#googleMap {
+    width: 99%;
+    height: 700px;
+	}
