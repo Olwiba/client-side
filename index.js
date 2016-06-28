@@ -12,8 +12,8 @@ var myLat = 0
 
 /* Set up map */
 var mapPos = {
-    lat: myLat,
-    lng: myLong
+    lat: 24,
+    lng: 133
 };
 var mapProp = {
     center: mapPos,
