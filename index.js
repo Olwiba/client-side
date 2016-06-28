@@ -7,13 +7,13 @@ console.log('this is the newest page')
 var endpoint = 'https://api.wheretheiss.at/v1/satellites/25544'
 var target = document.getElementsByTagName('main')[0]
 
-var myLong = 0
-var myLat = 0
+var myLong = 25
+var myLat = 133
 
 /* Set up map */
 var mapPos = {
-    lat: 24,
-    lng: 133
+    lat: myLat,
+    lng: myLong
 };
 var mapProp = {
     center: mapPos,
