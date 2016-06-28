@@ -149,11 +149,11 @@ xhr.get(endpoint, function (err, data) {
   mylat = myData.latitude
   myLong = myData.longitude
 
-	initialize();
-
   // Replace 'Space' below with the response
   var target = document.getElementsByTagName('main')[0]
   target.innerHTML = showLocation(myData)
+	initialize();
+  
 
   var findISS = document.getElementById('iss')
 	findISS.addEventListener('click', updateISS)
