@@ -6,7 +6,6 @@ console.log('this is the newer page')
 
 var endpoint = 'https://api.wheretheiss.at/v1/satellites/25544'
 var target = document.getElementsByTagName('main')[0]
-target.innerHTML = showLocation()
 
 var myLong = 0
 var myLat = 0
@@ -133,6 +132,8 @@ function initialize() {
 }
 initialize();
 
+target.innerHTML = showLocation()
+
 function updateISS() {
 
 xhr.get(endpoint, function (err, data) {
@@ -144,14 +145,14 @@ xhr.get(endpoint, function (err, data) {
   console.log(data.body) // FYI: data.body is a string
   var myData = JSON.parse(data.body)
 
-  // Replace 'Space' below with the response
-  var target = document.getElementsByTagName('main')[0]
-  target.innerHTML = showLocation(myData)
-
   mylat = myData.latitude
   myLong = myData.longitude
 
 	initialize();
+
+  // Replace 'Space' below with the response
+  var target = document.getElementsByTagName('main')[0]
+  target.innerHTML = showLocation(myData)
 
   var findISS = document.getElementById('iss')
 	findISS.addEventListener('click', updateISS)
