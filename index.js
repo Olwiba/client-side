@@ -11,6 +11,7 @@ var myLong = 0
 var myLat = 0
 
 
+  target.innerHTML = showLocation()
 
 
 function updateISS() {
@@ -27,7 +28,7 @@ xhr.get(endpoint, function (err, data) {
   // Replace 'Space' below with the response
   var target = document.getElementsByTagName('main')[0]
   target.innerHTML = showLocation(myData)
-  
+
 	  /* Set up map */
 	var mapPos = {
 	    lat: myLat,
