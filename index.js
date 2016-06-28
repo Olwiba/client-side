@@ -146,7 +146,7 @@ xhr.get(endpoint, function (err, data) {
   console.log(data.body) // FYI: data.body is a string
   var myData = JSON.parse(data.body)
 
-  console.log('this is my data ', myData.latitude, myData.longitude)
+  console.log('this is my data ', typeof myData.latitude, typeof myData.longitude)
   myLat = myData.latitude
   myLong = myData.longitude
   console.log('This is after ', myLat, myLong)
