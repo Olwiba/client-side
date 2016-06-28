@@ -130,9 +130,10 @@ function initialize() {
             title: 'Server / Person Located Here!'
         });
 }
-initialize();
 
 target.innerHTML = showLocation()
+initialize();
+
 
 function updateISS() {
 
